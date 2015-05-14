@@ -9,23 +9,9 @@
 
 #import "YUTextView.h"
 
-#define WarnIgnore_Deprecate(Stuff) \
-do { \
-    _Pragma("clang diagnostic push") \
-    _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
-    Stuff; \
-    _Pragma("clang diagnostic pop") \
-} while (0)
-
-
-
 @interface YUTextView()
-@property (nonatomic, strong) UIToolbar *toolBar;
-@property (nonatomic, retain) UIView *fullView;
-
 @property (nonatomic, retain) UIColor* realTextColor;
 @property (nonatomic, readonly) NSString* realText;
-
 - (void) beginEditing:(NSNotification*) notification;
 - (void) endEditing:(NSNotification*) notification;
 @end
