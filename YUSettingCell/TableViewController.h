@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  YUSettingCell
 //
 //  Created by yuzhx on 15/5/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TableViewController : UITableViewController
 
 @end
-
