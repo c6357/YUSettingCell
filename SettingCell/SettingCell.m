@@ -1,6 +1,6 @@
 //
 //  SettingCell.m
-//  YUSettingCell
+//  YUSettingCell<https://github.com/c6357/YUSettingCell>
 //
 //  Created by BruceYu on 15/5/14.
 //  Copyright (c) 2015年 BruceYu. All rights reserved.
@@ -10,7 +10,7 @@
 #import <Masonry/Masonry.h>
 
 @interface SettingCell()<UITextViewDelegate>
-@property (weak, nonatomic) IBOutlet UISwitch *accessorySwitch;
+@property (strong, nonatomic)UISwitch *accessorySwitch;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 
 @property (weak, nonatomic) IBOutlet UITextField *describeTexField;
@@ -53,8 +53,6 @@
     }
 #pragma clang diagnostic po
     
-    
-    self.accessorySwitch.hidden = YES;
     self.accessoryView = nil;
     switch (setInfo.accView) {
         case ACCV_Accessory:
@@ -72,7 +70,6 @@
         case ACCV_Switch:
         {
             self.accessoryView = self.accessorySwitch;
-            self.accessorySwitch.hidden = NO;
             [self.accessorySwitch setOn:setInfo.switchON animated:false];
             self.accessorySwitch.userInteractionEnabled = setInfo.switchEnable;
         }
@@ -82,7 +79,7 @@
             self.accessoryType = UITableViewCellAccessoryNone;
             break;
     }
-
+    
     
     ///////////////desrc
     self.describeTexField.userInteractionEnabled = NO;
@@ -157,6 +154,13 @@
     self.setInfo.switchON = sender.on;
 }
 
+-(UISwitch *)accessorySwitch{
+    if (!_accessorySwitch) {
+        _accessorySwitch = [[UISwitch alloc] init];
+        _accessorySwitch.onTintColor = [UIColor blueColor];
+    }
+    return _accessorySwitch;
+}
 @end
 
 @implementation SettingInfo

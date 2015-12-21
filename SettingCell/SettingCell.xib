@@ -50,18 +50,6 @@
                             <outlet property="delegate" destination="KGk-i7-Jjw" id="nKY-2j-C6i"/>
                         </connections>
                     </textView>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Py4-ce-lYO">
-                        <rect key="frame" x="240" y="6" width="51" height="31"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="49" id="Pfm-Pt-1AI"/>
-                            <constraint firstAttribute="height" constant="31" id="f3B-lk-dZP"/>
-                        </constraints>
-                        <color key="onTintColor" red="0.1269924744" green="0.56563021950000003" blue="0.95575747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="switchEvent:" destination="KGk-i7-Jjw" eventType="valueChanged" id="7FN-la-s4s"/>
-                        </connections>
-                    </switch>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -74,7 +62,6 @@
                     <constraint firstItem="tdj-kb-BWa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="TdH-qO-C6z"/>
                     <constraint firstItem="3ZJ-6e-zRQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="WV0-9E-EGh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="mB9-ye-2NY" secondAttribute="trailing" constant="52" id="bW0-Bd-VDw"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Py4-ce-lYO" secondAttribute="trailing" constant="23" id="gXN-Sk-rOE"/>
                     <constraint firstItem="mB9-ye-2NY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="hMi-Ps-POi"/>
                     <constraint firstAttribute="bottomMargin" secondItem="uMf-OF-LAQ" secondAttribute="bottom" constant="-9" id="jVU-c9-b3I"/>
                     <constraint firstAttribute="bottomMargin" secondItem="tdj-kb-BWa" secondAttribute="bottom" constant="-8" id="kte-w6-hda"/>
@@ -82,7 +69,6 @@
                     <constraint firstItem="mB9-ye-2NY" firstAttribute="leading" secondItem="3ZJ-6e-zRQ" secondAttribute="trailing" constant="20" id="oEW-RN-TTd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="mB9-ye-2NY" secondAttribute="bottom" constant="-9" id="qFi-6I-aNZ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="uMf-OF-LAQ" secondAttribute="trailing" constant="-8" id="rRR-21-AtD"/>
-                    <constraint firstItem="Py4-ce-lYO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vx3-WG-m4r"/>
                     <constraint firstItem="uMf-OF-LAQ" firstAttribute="leading" secondItem="3ZJ-6e-zRQ" secondAttribute="trailing" constant="20" id="wc1-TE-QIr"/>
                     <constraint firstAttribute="topMargin" secondItem="3ZJ-6e-zRQ" secondAttribute="top" id="zB5-rX-LTh"/>
                     <constraint firstItem="mB9-ye-2NY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="52" id="zQ3-Z6-tc0"/>
@@ -99,7 +85,6 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
-                <outlet property="accessorySwitch" destination="Py4-ce-lYO" id="If2-lV-2ep"/>
                 <outlet property="describeTexField" destination="uMf-OF-LAQ" id="DOg-Mz-TNh"/>
                 <outlet property="describeTexView" destination="mB9-ye-2NY" id="bgR-ub-7EG"/>
                 <outlet property="iconImg" destination="3ZJ-6e-zRQ" id="UIl-wq-89g"/>
