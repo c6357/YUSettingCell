@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A868F41C27DA8E000459BA /* YUTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A868F31C27DA8E000459BA /* YUTextView.m */; };
 		3930C023D626E8A031516E2B /* libPods-YUSettingCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5B7AFBCE0546ACF23B67A0 /* libPods-YUSettingCell.a */; };
 		6701451F1B04F40200BB1DA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6701451E1B04F40200BB1DA2 /* main.m */; };
 		670145221B04F40200BB1DA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 670145211B04F40200BB1DA2 /* AppDelegate.m */; };
@@ -16,7 +17,6 @@
 		670145391B04F40200BB1DA2 /* YUSettingCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 670145381B04F40200BB1DA2 /* YUSettingCellTests.m */; };
 		670145461B04F43600BB1DA2 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 670145441B04F43600BB1DA2 /* SettingCell.m */; };
 		670145471B04F43600BB1DA2 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 670145451B04F43600BB1DA2 /* SettingCell.xib */; };
-		6701454E1B04F58B00BB1DA2 /* YUTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6701454D1B04F58B00BB1DA2 /* YUTextView.m */; };
 		670145511B04F75600BB1DA2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 670145501B04F75600BB1DA2 /* TableViewController.m */; };
 		670145531B04FCAD00BB1DA2 /* swift.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 670145521B04FCAD00BB1DA2 /* swift.jpg */; };
 /* End PBXBuildFile section */
@@ -32,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18A868F21C27DA8E000459BA /* YUTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUTextView.h; sourceTree = "<group>"; };
+		18A868F31C27DA8E000459BA /* YUTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUTextView.m; sourceTree = "<group>"; };
 		670145191B04F40200BB1DA2 /* YUSettingCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUSettingCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6701451D1B04F40200BB1DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6701451E1B04F40200BB1DA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,8 +48,6 @@
 		670145431B04F43600BB1DA2 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
 		670145441B04F43600BB1DA2 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
 		670145451B04F43600BB1DA2 /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
-		6701454C1B04F58B00BB1DA2 /* YUTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUTextView.h; sourceTree = "<group>"; };
-		6701454D1B04F58B00BB1DA2 /* YUTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUTextView.m; sourceTree = "<group>"; };
 		6701454F1B04F75600BB1DA2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		670145501B04F75600BB1DA2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		670145521B04FCAD00BB1DA2 /* swift.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpg; sourceTree = "<group>"; };
@@ -75,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18A868F11C27DA8E000459BA /* YUTextView */ = {
+			isa = PBXGroup;
+			children = (
+				18A868F21C27DA8E000459BA /* YUTextView.h */,
+				18A868F31C27DA8E000459BA /* YUTextView.m */,
+			);
+			path = YUTextView;
+			sourceTree = "<group>";
+		};
 		62D9B6AF6EE1DA3A9F0019A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +115,6 @@
 		6701451B1B04F40200BB1DA2 /* YUSettingCell */ = {
 			isa = PBXGroup;
 			children = (
-				670145481B04F55B00BB1DA2 /* YUTextView */,
 				670145421B04F42300BB1DA2 /* SettingCell */,
 				670145201B04F40200BB1DA2 /* AppDelegate.h */,
 				670145211B04F40200BB1DA2 /* AppDelegate.m */,
@@ -150,20 +158,12 @@
 		670145421B04F42300BB1DA2 /* SettingCell */ = {
 			isa = PBXGroup;
 			children = (
+				18A868F11C27DA8E000459BA /* YUTextView */,
 				670145431B04F43600BB1DA2 /* SettingCell.h */,
 				670145441B04F43600BB1DA2 /* SettingCell.m */,
 				670145451B04F43600BB1DA2 /* SettingCell.xib */,
 			);
 			path = SettingCell;
-			sourceTree = SOURCE_ROOT;
-		};
-		670145481B04F55B00BB1DA2 /* YUTextView */ = {
-			isa = PBXGroup;
-			children = (
-				6701454C1B04F58B00BB1DA2 /* YUTextView.h */,
-				6701454D1B04F58B00BB1DA2 /* YUTextView.m */,
-			);
-			path = YUTextView;
 			sourceTree = SOURCE_ROOT;
 		};
 		A28A93DADED84B69A63B40A9 /* Pods */ = {
@@ -328,8 +328,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6701454E1B04F58B00BB1DA2 /* YUTextView.m in Sources */,
 				670145221B04F40200BB1DA2 /* AppDelegate.m in Sources */,
+				18A868F41C27DA8E000459BA /* YUTextView.m in Sources */,
 				670145461B04F43600BB1DA2 /* SettingCell.m in Sources */,
 				670145511B04F75600BB1DA2 /* TableViewController.m in Sources */,
 				6701451F1B04F40200BB1DA2 /* main.m in Sources */,
