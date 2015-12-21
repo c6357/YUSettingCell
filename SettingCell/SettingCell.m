@@ -138,6 +138,7 @@
     self.setInfo.describe = sender.text;
 }
 
+
 -(IBAction)textViewDidChange:(UITextView *)textView{
     if (self.setInfo.eventBlock) {
         self.setInfo.eventBlock(textView.text);

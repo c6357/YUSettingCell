@@ -29,6 +29,7 @@ typedef void (^NillBlock_Nill)(void);
 @interface SettingCell : UITableViewCell
 
 -(void)setSetInfo:(SettingInfo *)setInfo;
+
 @end
 
 
