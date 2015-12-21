@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3930C023D626E8A031516E2B /* libPods-YUSettingCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5B7AFBCE0546ACF23B67A0 /* libPods-YUSettingCell.a */; };
 		6701451F1B04F40200BB1DA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6701451E1B04F40200BB1DA2 /* main.m */; };
 		670145221B04F40200BB1DA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 670145211B04F40200BB1DA2 /* AppDelegate.m */; };
 		670145281B04F40200BB1DA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 670145261B04F40200BB1DA2 /* Main.storyboard */; };
@@ -50,6 +51,9 @@
 		6701454F1B04F75600BB1DA2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		670145501B04F75600BB1DA2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		670145521B04FCAD00BB1DA2 /* swift.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpg; sourceTree = "<group>"; };
+		7103C65B0933EBDA381EA5F3 /* Pods-YUSettingCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUSettingCell.release.xcconfig"; path = "Pods/Target Support Files/Pods-YUSettingCell/Pods-YUSettingCell.release.xcconfig"; sourceTree = "<group>"; };
+		CB5B7AFBCE0546ACF23B67A0 /* libPods-YUSettingCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YUSettingCell.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F675FFBB4FC70165A6A3E2F9 /* Pods-YUSettingCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUSettingCell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YUSettingCell/Pods-YUSettingCell.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3930C023D626E8A031516E2B /* libPods-YUSettingCell.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62D9B6AF6EE1DA3A9F0019A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB5B7AFBCE0546ACF23B67A0 /* libPods-YUSettingCell.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		670145101B04F40100BB1DA2 = {
 			isa = PBXGroup;
 			children = (
 				6701451B1B04F40200BB1DA2 /* YUSettingCell */,
 				670145351B04F40200BB1DA2 /* YUSettingCellTests */,
 				6701451A1B04F40200BB1DA2 /* Products */,
+				A28A93DADED84B69A63B40A9 /* Pods */,
+				62D9B6AF6EE1DA3A9F0019A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +166,15 @@
 			path = YUTextView;
 			sourceTree = SOURCE_ROOT;
 		};
+		A28A93DADED84B69A63B40A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F675FFBB4FC70165A6A3E2F9 /* Pods-YUSettingCell.debug.xcconfig */,
+				7103C65B0933EBDA381EA5F3 /* Pods-YUSettingCell.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6701453C1B04F40200BB1DA2 /* Build configuration list for PBXNativeTarget "YUSettingCell" */;
 			buildPhases = (
+				3BFE34909F9AD40C08C94298 /* Check Pods Manifest.lock */,
 				670145151B04F40200BB1DA2 /* Sources */,
 				670145161B04F40200BB1DA2 /* Frameworks */,
 				670145171B04F40200BB1DA2 /* Resources */,
+				88F59C6720AE9598989006DF /* Embed Pods Frameworks */,
+				5E768797AB344B7005519985 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +274,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BFE34909F9AD40C08C94298 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E768797AB344B7005519985 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUSettingCell/Pods-YUSettingCell-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F59C6720AE9598989006DF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YUSettingCell/Pods-YUSettingCell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		670145151B04F40200BB1DA2 /* Sources */ = {
@@ -382,6 +457,7 @@
 		};
 		6701453D1B04F40200BB1DA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F675FFBB4FC70165A6A3E2F9 /* Pods-YUSettingCell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YUSettingCell/Info.plist;
@@ -393,6 +469,7 @@
 		};
 		6701453E1B04F40200BB1DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7103C65B0933EBDA381EA5F3 /* Pods-YUSettingCell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YUSettingCell/Info.plist;

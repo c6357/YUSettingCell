@@ -96,7 +96,7 @@
     info1.title = @"Sounds";
     info1.accView = ACCV_Switch;
     info1.switchON = YES;
-    info1.switchEnable = NO;
+    info1.switchEnable = YES;
     info1.eventBlock = ^(UISwitch* switchEvent){
     };
     
@@ -105,14 +105,13 @@
     info2.title = @"Vibrate";
     info2.accView = ACCV_Switch;
     info2.switchON = YES;
-    info2.switchEnable = NO;
+    info2.switchEnable = YES;
     info2.eventBlock = ^(UISwitch* switchEvent){
         
     };
     
     SettingInfo *info3 = [[SettingInfo alloc] init];
     info3.title = @"WLAN";
-    info3.textEnable = NO;
     info3.describe = @"Wi-fi";
     info3.accView = ACCV_Accessory;
     info3.didSelectRowBlock = ^{

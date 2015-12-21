@@ -9,6 +9,7 @@
 //
 
 #import "SettingCell.h"
+#import <Masonry/Masonry.h>
 
 @interface SettingCell()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *accessorySwitch;
@@ -45,6 +46,7 @@
     _setInfo = setInfo;
     
     self.titleLab.text = setInfo.title;
+    self.iconImg.image = setInfo.iconImg;
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -87,46 +89,49 @@
     ///////////////desrc
     self.describeTexField.userInteractionEnabled = NO;
     self.describeTexView.userInteractionEnabled = NO;
-    if (setInfo.handle) {
-        switch (setInfo.inputTextType) {
-            case Input_TextField:
-            {
-                self.describeTexField.delegate = setInfo.handle;
-                self.describeTexField.text = setInfo.describe;
-                self.describeTexField.userInteractionEnabled = !setInfo.textEnable;
-            }
-                break;
-                
-            case Input_TextView:
-            {
-                self.describeTexView.delegate = setInfo.handle;
-                self.describeTexView.text = setInfo.describe;
-                self.describeTexView.userInteractionEnabled = !setInfo.textEnable;
-            }
-                break;
-                
-            default:
-                break;
+    switch (setInfo.inputTextType) {
+        case Input_TextField:
+        {
+            self.describeTexField.delegate = setInfo.handle?:nil;
+            self.describeTexField.text = setInfo.describe;
+            self.describeTexField.userInteractionEnabled = setInfo.textEnable;
+            self.describeTexField.backgroundColor = [UIColor clearColor];
         }
+            break;
+            
+        case Input_TextView:
+        {
+            self.describeTexView.delegate = setInfo.handle?:nil;
+            self.describeTexView.text = setInfo.describe;
+            self.describeTexView.userInteractionEnabled = setInfo.textEnable;
+            self.describeTexView.backgroundColor = [UIColor clearColor];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)updateConstraints{
+    
+    [self.iconImg mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.offset(self.setInfo.iconImg?self.iconImg.frame.size.width:0);
+    }];
+    
+    [self.titleLab mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.iconImg.mas_left).offset(self.setInfo.iconImg?self.iconImg.frame.size.width+8:0);;
+    }];
+    
+    if (self.setInfo.accView == ACCV_None) {
+        [self.describeTexField mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-36);
+        }];
     }
     
+    self.iconImg.backgroundColor = [UIColor redColor];
     
-   
-    //////////////frame
-    CGFloat X = 5 + [self LabSize:self.titleLab.font labTex:self.titleLab.text].width +self.titleLab.frame.origin.x;
-    CGRect frame = CGRectMake(X,self.describeTexField.frame.origin.y, self.frame.size.width - X, self.frame.size.height);
-    self.describeTexField.frame = frame;
-    self.describeTexField.backgroundColor = [UIColor clearColor];
-    
-    self.describeTexView.frame = frame;
-    self.describeTexView.backgroundColor = [UIColor clearColor];
-    
-    self.iconImg.hidden = setInfo.iconImg ? NO : YES;
-    self.iconImg.image = setInfo.iconImg;
-    
-    frame = self.titleLab.frame;
-    frame.origin.x = setInfo.iconImg ? 60 : 15;
-    self.titleLab.frame = frame;
+    [super updateConstraints];
 }
 
 
@@ -154,14 +159,6 @@
     self.setInfo.switchON = sender.on;
 }
 
-
-#pragma mark - Private -
--(CGSize)LabSize:(UIFont*)Labfont labTex:(NSString*)Text{
-    NSDictionary * attribute = [NSDictionary dictionaryWithObjectsAndKeys:Labfont,NSFontAttributeName,nil];
-    CGSize actualsize = [Text boundingRectWithSize:CGSizeMake(self.frame.size.width, 10000) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
-    actualsize.width += 8;
-    return actualsize;
-}
 @end
 
 @implementation SettingInfo
@@ -175,10 +172,10 @@
         self.handle = nil;
         self.switchON = YES;
         self.switchEnable = YES;
-        self.textEnable = YES;
+        self.textEnable = NO;
         
         self.accView = ACCV_None;
-        self.accView = Input_TextField;
+        self.inputTextType = Input_TextField;
     }
     return self;
 }
