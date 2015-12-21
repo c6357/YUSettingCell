@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,6 +17,7 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tdj-kb-BWa">
                         <rect key="frame" x="10" y="0.0" width="217" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
@@ -23,47 +25,51 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3ZJ-6e-zRQ">
                         <rect key="frame" x="12" y="8" width="28" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.23041252240000001" green="0.50300962989999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="uMf-OF-LAQ">
                         <rect key="frame" x="60" y="0.0" width="200" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         <connections>
-                            <action selector="textfieldEvent:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="DWk-nM-6KE"/>
+                            <action selector="textfieldEvent:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="y0b-4f-Va7"/>
                         </connections>
                     </textField>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mB9-ye-2NY" customClass="YUTextView">
                         <rect key="frame" x="60" y="0.0" width="200" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="nKY-2j-C6i"/>
+                        </connections>
                     </textView>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Py4-ce-lYO">
                         <rect key="frame" x="240" y="8" width="51" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <color key="onTintColor" red="0.1269924744" green="0.56563021950000003" blue="0.95575747280000001" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="switchEvent:" destination="KGk-i7-Jjw" eventType="valueChanged" id="7FN-la-s4s"/>
                         </connections>
                     </switch>
                 </subviews>
+                <animations/>
             </tableViewCellContentView>
+            <animations/>
             <connections>
-                <outlet property="IconImg" destination="3ZJ-6e-zRQ" id="4vP-zb-L3g"/>
                 <outlet property="accessorySwitch" destination="Py4-ce-lYO" id="If2-lV-2ep"/>
                 <outlet property="describeTexField" destination="uMf-OF-LAQ" id="DOg-Mz-TNh"/>
                 <outlet property="describeTexView" destination="mB9-ye-2NY" id="bgR-ub-7EG"/>
+                <outlet property="iconImg" destination="3ZJ-6e-zRQ" id="UIl-wq-89g"/>
                 <outlet property="titleLab" destination="tdj-kb-BWa" id="wLp-S8-MsC"/>
             </connections>
             <point key="canvasLocation" x="245" y="315"/>
         </tableViewCell>
     </objects>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

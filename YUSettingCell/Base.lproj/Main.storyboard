@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oYR-1h-5Lc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oYR-1h-5Lc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
         <scene sceneID="wUu-Ze-jcP">
             <objects>
                 <tableViewController id="mWm-Ni-M1h" customClass="TableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QEm-6C-0jn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QEm-6C-0jn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <outlet property="dataSource" destination="mWm-Ni-M1h" id="Ytt-5h-alN"/>
                             <outlet property="delegate" destination="mWm-Ni-M1h" id="HTy-Gy-cbu"/>
@@ -27,11 +29,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-m1-Smc" customClass="Button_Exit_Red">
-                            <rect key="frame" x="105" y="12" width="393" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-m1-Smc" customClass="Button_Exit_Red">
+                            <rect key="frame" x="35" y="12" width="531" height="40"/>
+                            <animations/>
                             <color key="backgroundColor" red="1" green="0.26264200640000002" blue="0.23993477599999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="290" id="Bkh-Cq-R23"/>
+                                <constraint firstAttribute="width" constant="393" id="Bkh-Cq-R23"/>
                                 <constraint firstAttribute="height" constant="40" id="MV7-1b-XxQ"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,12 +42,20 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Bkh-Cq-R23"/>
+                                </mask>
+                            </variation>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="centerX" secondItem="IfG-m1-Smc" secondAttribute="centerX" id="O8B-xl-ozS"/>
-                        <constraint firstAttribute="centerY" secondItem="IfG-m1-Smc" secondAttribute="centerY" id="dCg-Oa-56a"/>
+                        <constraint firstItem="IfG-m1-Smc" firstAttribute="leading" secondItem="Dbj-QL-r7T" secondAttribute="leading" constant="35" id="EB8-zU-1NH"/>
+                        <constraint firstAttribute="centerX" secondItem="IfG-m1-Smc" secondAttribute="centerX" constant="-0.5" id="O8B-xl-ozS"/>
+                        <constraint firstAttribute="trailing" secondItem="IfG-m1-Smc" secondAttribute="trailing" constant="34" id="SKX-lX-fnJ"/>
+                        <constraint firstAttribute="centerY" secondItem="IfG-m1-Smc" secondAttribute="centerY" constant="-2" id="dCg-Oa-56a"/>
                     </constraints>
                 </view>
             </objects>
@@ -58,6 +69,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Opg-h0-ACO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

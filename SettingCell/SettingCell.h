@@ -12,8 +12,13 @@
 typedef enum : NSUInteger {
     ACCV_None,
     ACCV_Accessory,
-    ACCV_UISwitch
+    ACCV_Switch
 } SetInfoAccType;
+
+typedef enum : NSUInteger {
+    Input_TextField,
+    Input_TextView
+} Input_TextType;
 
 typedef void (^NillBlock_OBJ)(id obj);
 typedef void (^NillBlock_Nill)(void);
@@ -23,17 +28,6 @@ typedef void (^NillBlock_Nill)(void);
 @class SettingInfo;
 @interface SettingCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UISwitch *accessorySwitch;
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
-
-@property (weak, nonatomic) IBOutlet UITextField *describeTexField;
-@property (weak, nonatomic) IBOutlet YUTextView *describeTexView;
-
-@property (weak, nonatomic) IBOutlet UIImageView *IconImg;
-
-
-@property (nonatomic,strong) SettingInfo *setInfo;
-
 -(void)setSetInfo:(SettingInfo *)setInfo;
 @end
 
@@ -42,26 +36,23 @@ typedef void (^NillBlock_Nill)(void);
 
 @interface SettingInfo : NSObject
 
-@property (nonatomic,strong) NSString *Title;//主题
+@property (nonatomic,strong) NSString *title;//主题
 
-@property (nonatomic,strong) NSString *Describe;//描述
+@property (nonatomic,strong) NSString *describe;//描述
 
-@property (nonatomic,strong) UIImage *IconImg;
+@property (nonatomic,strong) UIImage *iconImg;
 
-@property (nonatomic,assign) BOOL DescribeOnlyShow;//描述
-
-@property (nonatomic,assign) BOOL isTextField;//默认输入控件为textfield 由于不想影响以前的使用，新增textView
-
-@property (nonatomic,assign) BOOL switchOPen;
-@property (nonatomic,assign) BOOL enableSwitch;
-
-@property (nonatomic, assign)  SetInfoAccType accView;
+@property (nonatomic,assign) Input_TextType inputTextType;//默认输入控件为textfield 由于不想影响以前的使用，新增textView
+@property (nonatomic,assign) SetInfoAccType accView;
 
 @property (nonatomic,copy) NillBlock_OBJ eventBlock;
 
 @property (nonatomic,copy) NillBlock_Nill didSelectRowBlock;
 
+@property (nonatomic,assign) BOOL textEnable;//描述
+@property (nonatomic,assign) BOOL switchON;
+@property (nonatomic,assign) BOOL switchEnable;
 
-@property (nonatomic, assign) id handle;
-@property (nonatomic, assign) SEL SELAction;
+@property (nonatomic,assign) id handle;
+@property (nonatomic,assign) SEL action;
 @end
