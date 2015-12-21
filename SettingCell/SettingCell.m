@@ -41,7 +41,10 @@
 
 -(void)setSetInfo:(SettingInfo *)setInfo
 {
+    self.titleLab.text = nil;
+    self.iconImg.image = nil;
     _setInfo = setInfo;
+    
     
     self.titleLab.text = setInfo.title;
     self.iconImg.image = setInfo.iconImg;
@@ -123,6 +126,14 @@
             make.right.equalTo(self.contentView).offset(-36);
         }];
     }
+    else if (self.setInfo.accView == ACCV_Switch){
+        [self.describeTexField mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-8);
+        }];
+        [self.describeTexView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-8);
+        }];
+    }
     
     self.iconImg.backgroundColor = [UIColor redColor];
     
@@ -164,6 +175,26 @@
 @end
 
 @implementation SettingInfo
++(SettingInfo*)initWithTitle:(NSString*)title desrc:(NSString*)desrc{
+    SettingInfo *info = [[SettingInfo alloc] init];
+    info.title = title;
+    info.describe = desrc;
+    return info;
+}
+
++(SettingInfo*)initWithSwitchTitle:(NSString*)title eventBlock:(NillBlock_OBJ)eventBlock{
+    SettingInfo *info = [SettingInfo initWithTitle:title desrc:@""];
+    info.accView = ACCV_Switch;
+    info.eventBlock = eventBlock;
+    return info;
+}
+
++(SettingInfo*)initWithAccessoryTitle:(NSString*)title desrc:(NSString*)desrc  didSelectRowBlock:(NillBlock_Nill)didSelectRowBlock{
+    SettingInfo *info = [SettingInfo initWithTitle:title desrc:desrc];
+    info.didSelectRowBlock = didSelectRowBlock;
+    return info;
+}
+
 - (instancetype)init
 {
     self = [super init];

@@ -1,6 +1,6 @@
 //
 //  SettingCell.h
-//  YUSettingCell
+//  YUSettingCell<https://github.com/c6357/YUSettingCell>
 //
 //  Created by BruceYu on 15/5/14.
 //  Copyright (c) 2015年 BruceYu. All rights reserved.
@@ -37,6 +37,13 @@ typedef void (^NillBlock_Nill)(void);
 
 @interface SettingInfo : NSObject
 
++(SettingInfo*)initWithTitle:(NSString*)title desrc:(NSString*)desrc;
+
++(SettingInfo*)initWithSwitchTitle:(NSString*)title eventBlock:(NillBlock_OBJ)eventBlock;
+
++(SettingInfo*)initWithAccessoryTitle:(NSString*)title desrc:(NSString*)desrc  didSelectRowBlock:(NillBlock_Nill)didSelectRowBlock;
+
+
 @property (nonatomic,strong) NSString *title;//主题
 
 @property (nonatomic,strong) NSString *describe;//描述
@@ -56,4 +63,5 @@ typedef void (^NillBlock_Nill)(void);
 
 @property (nonatomic,assign) id handle;
 @property (nonatomic,assign) SEL action;
+
 @end
