@@ -182,6 +182,15 @@
     return info;
 }
 
++(SettingInfo*)initWithEditTitle:(NSString*)title desrc:(NSString*)desrc eventBlock:(NillBlock_OBJ)eventBlock{
+    SettingInfo *info = [[SettingInfo alloc] init];
+    info.title = title;
+    info.describe = desrc;
+    info.textEnable = YES;
+    info.eventBlock = eventBlock;
+    return info;
+}
+
 +(SettingInfo*)initWithSwitchTitle:(NSString*)title eventBlock:(NillBlock_OBJ)eventBlock{
     SettingInfo *info = [SettingInfo initWithTitle:title desrc:@""];
     info.accView = ACCV_Switch;

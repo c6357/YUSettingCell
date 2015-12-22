@@ -39,6 +39,8 @@ typedef void (^NillBlock_Nill)(void);
 
 +(SettingInfo*)initWithTitle:(NSString*)title desrc:(NSString*)desrc;
 
++(SettingInfo*)initWithEditTitle:(NSString*)title desrc:(NSString*)desrc eventBlock:(NillBlock_OBJ)eventBlock;
+
 +(SettingInfo*)initWithSwitchTitle:(NSString*)title eventBlock:(NillBlock_OBJ)eventBlock;
 
 +(SettingInfo*)initWithAccessoryTitle:(NSString*)title desrc:(NSString*)desrc  didSelectRowBlock:(NillBlock_Nill)didSelectRowBlock;
